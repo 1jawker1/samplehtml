@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grow Button</title>
+    <style>
+    
+        .typewriter h1 {
+              overflow: hidden; 
+              border-right: .15em solid black; 
+              white-space: nowrap; 
+              margin: 0 auto; 
+              letter-spacing: .15em; 
+              animation: 
+                typing 3.5s steps(10, end),
+                blink-caret .75s step-end infinite;
+              
+            }
+
+
+            @keyframes typing {
+              from { width: 0 }
+              to { width: 70% }
+            }
+            
+            
+            @keyframes blink-caret {
+              from, to { border-color: transparent }
+              50% { border-color: orange; }
+            }
+        #btn {
+            font-size: 16px; 
+            transition: font-size 0.3s; 
+            color: white;
+            background-color: green;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        a{
+            text-decoration: none;
+              color: white;
+        }
+        h1{
+            font-family: "champagne";
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <center>
+        <div class="typewriter">
+    <h1>Do You Love Me?</h1></div>
+    <button id="btn" onclick="growButton()"><a href="https://media.tenor.com/ojv577rsaeUAAAAi/love-you-too-i-love-you.gif"> Yes</a></button>
+    <button id="btn" onclick="growButton()">No</button>
+    </center>
+
+    <script>
+        function growButton() {
+            var button = document.getElementById("btn");
+            var currentSize = parseFloat(window.getComputedStyle(button, null).getPropertyValue('font-size'));
+            var newSize = currentSize * 4; // Increase size by 20%
+            button.style.fontSize = newSize + "px";
+        }
+    </script>
+</body>
+</html>
